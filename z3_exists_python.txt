@@ -1,0 +1,26 @@
+import numpy as np
+arr = np.array([-3, -2, -1, 0,1, 2, 2, 3]) 
+
+
+def exists(element,array):
+    
+    first = 0;
+    middle_last= -1;
+    last = len(array)
+    
+    while True:
+        
+        middle = int((last+first)/2)
+   
+        if element<array[middle]:
+            last = middle
+        elif array[middle]<element:
+            first = middle
+        if middle==middle_last:
+            return False
+        middle_last = middle
+        if array[middle]==element:
+            return True
+    
+print(arr)
+print(exists(3,arr))
